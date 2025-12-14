@@ -5,7 +5,7 @@
       # nil_ls = {
       #   enable = true;
       # };
-      nixd_ls.enable = true;
+      nixd.enable = true;
       statix.enable = true;
     };
     conform-nvim.settings = {

@@ -12,37 +12,45 @@ let
       inherit module;
     };
   inherit (flake) inputs self;
-  bareModules = [
+  bareModules = with self.nvixPlugins; [
     # Core functionality and improvements
-    self.nvixPlugins.common
-    self.nvixPlugins.buffer
-    self.nvixPlugins.ux # better user experience
-    self.nvixPlugins.snacks
+    common
+    buffer
+    ux # better user experience
+    snacks
   ];
-  coreModules = bareModules ++ [
-    # noice for cmdline
-    self.nvixPlugins.noice
+  coreModules =
+    bareModules
+    ++ (with self.nvixPlugins; [
+      # noice for cmdline
+      noice
 
-    # Git and version control
-    self.nvixPlugins.git
+      # Git and version control
+      git
 
-    # UI and appearance
-    self.nvixPlugins.lualine
-    self.nvixPlugins.firenvim
+      # UI and appearance
+      lualine
+      firenvim
 
-    # Code editing and syntax
-    self.nvixPlugins.treesitter
-    self.nvixPlugins.blink-cmp
-    self.nvixPlugins.lang
-    self.nvixPlugins.lsp
+      # Code editing and syntax
+      treesitter
+      blink-cmp
+      lang
+      lsp
 
-    # Productivity
-    self.nvixPlugins.autosession
-    self.nvixPlugins.ai
-  ];
-  fullModules = coreModules ++ [
-    self.nvixPlugins.tex
-  ];
+      # Productivity
+      autosession
+      ai
+
+      smear-cursor
+      precognition
+      hardtime
+    ]);
+  fullModules =
+    coreModules
+    ++ (with self.nvixPlugins; [
+      tex
+    ]);
 in
 {
   packages = {

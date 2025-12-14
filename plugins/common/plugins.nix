@@ -23,7 +23,12 @@ in
     flash = {
       enable = true;
       settings = {
-        modes.char.enabled = false;
+        modes = {
+          char = {
+            enabled = true;
+            jump_labels = true;
+          };
+        };
       };
     };
     visual-multi.enable = true;
@@ -31,6 +36,15 @@ in
       enable = true;
       settings.spec = config.wKeyList;
       settings.preset = "helix";
+      settings.presets = {
+        operators = true;
+        motions = true;
+        text_objects = true;
+        windows = true;
+        nav = true;
+        z = true;
+        g = true;
+      };
     };
   };
   opts = {

@@ -1,9 +1,20 @@
-{ lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
   inherit (config.nvix.mkKey) mkKeymap wKeyObj;
   inherit (lib.nixvim) mkRaw;
 in
 {
+  extraPlugins = [
+    pkgs.vimPlugins.claude-code-nvim
+  ];
+  extraConfigLua = ''
+    require("claude-code").setup()
+  '';
   plugins = {
     # TODO: claude code? avante? Not sure how copilot or chatgpt work here
     chatgpt = {
