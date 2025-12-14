@@ -2,7 +2,7 @@
 {
   colorschemes = {
     catppuccin = {
-      enable = true;
+      enable = false;
       settings = {
         integrations.native_lsp = {
           enabled = true;
@@ -20,24 +20,42 @@
         transparent_background = true;
       };
     };
-  };
-
-  colorschemes.tokyonight = {
-    enable = false;
-    settings = {
-      style = "night";
-      transparent = config.nvix.transparent;
-      styles = {
-        floats = if config.nvix.transparent then "transparent" else "dark";
-        sidebars = if config.nvix.transparent then "transparent" else "dark";
-        comments.italic = true;
-        functions.italic = true;
-        variables.italic = true;
-        keywords = {
-          italic = true;
-          bold = true;
+    tokyonight = {
+      enable = false;
+      settings = {
+        style = "night";
+        transparent = config.nvix.transparent;
+        styles = {
+          floats = if config.nvix.transparent then "transparent" else "dark";
+          sidebars = if config.nvix.transparent then "transparent" else "dark";
+          comments.italic = true;
+          functions.italic = true;
+          variables.italic = true;
+          keywords = {
+            italic = true;
+            bold = true;
+          };
         };
       };
+    };
+    dracula-nvim = {
+      enable = true;
+      settings = {
+        style = "night";
+        transparent = config.nvix.transparent;
+        styles = {
+          floats = if config.nvix.transparent then "transparent" else "dark";
+          sidebars = if config.nvix.transparent then "transparent" else "dark";
+          comments.italic = true;
+          functions.italic = true;
+          variables.italic = true;
+          keywords = {
+            italic = true;
+            bold = true;
+          };
+        };
+      };
+
     };
   };
 }
