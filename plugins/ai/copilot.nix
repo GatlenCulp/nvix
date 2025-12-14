@@ -5,6 +5,7 @@ let
 in
 {
   plugins = {
+    # TODO: claude code? avante? Not sure how copilot or chatgpt work here
     chatgpt = {
       enable = true;
       settings = {
