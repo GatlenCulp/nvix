@@ -17,11 +17,12 @@
     inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = import inputs.systems;
+      # homeManagerModules.nixvim = inputs.nixvim.homeModules.nixvim;
       _module.args = { inherit inputs; };
       imports = [
         ./modules/flake
         ./overlays
-        ./plugins
+        ./plugin
       ];
     };
 }

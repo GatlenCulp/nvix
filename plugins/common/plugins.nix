@@ -16,7 +16,10 @@ in
     tmux-navigator.enable = true;
     smart-splits.enable = true;
     web-devicons.enable = true;
-    nvim-surround.enable = true;
+    nvim-surround = {
+      enable = true;
+      lazyLoad.enable = false; # Disable lazy-loading for nvim-surround
+    };
     nvim-autopairs.enable = true;
     trim.enable = true;
     lz-n.enable = true;
