@@ -22,7 +22,7 @@
       imports = [
         ./modules/flake
         ./overlays
-        ./plugin
+        ./plugins
       ];
     };
 }
